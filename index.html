@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="su">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-LKPD Bahasa Sunda – Paguneman | Kelas 4</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Bubblegum+Sans&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --hijau: #2e7d32;
+    --hijau-muda: #4caf50;
+    --hijau-terang: #a5d6a7;
+    --kuning: #f9a825;
+    --kuning-muda: #fff9c4;
+    --biru: #1565c0;
+    --biru-muda: #e3f2fd;
+    --merah: #c62828;
+    --merah-muda: #ffebee;
+    --oranye: #e65100;
+    --oranye-muda: #fff3e0;
+    --ungu: #6a1b9a;
+    --ungu-muda: #f3e5f5;
+    --putih: #ffffff;
+    --abu: #f5f5f5;
+    --teks: #1a1a2e;
+    --bayangan: 0 4px 20px rgba(0,0,0,0.12);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #e8f5e9;
+    color: var(--teks);
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
+    color: white;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: 10%;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+  .header-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 32px 24px 28px;
+    position: relative; z-index: 1;
+  }
+  .header-badge {
+    display: inline-block;
+    background: var(--kuning);
+    color: #1a1a2e;
+    font-weight: 800;
+    font-size: 12px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: clamp(26px, 5vw, 42px);
+    line-height: 1.15;
+    margin-bottom: 6px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  }
+  .header-sub {
+    font-size: 15px;
+    opacity: 0.85;
+    font-weight: 600;
+  }
+  .header-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+  }
+  .meta-chip {
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    backdrop-filter: blur(4px);
+  }
+
+  /* MAIN */
+  .main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 28px 16px 60px;
+  }
+
+  /* SECTION CARD */
+  .card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--bayangan);
+    margin-bottom: 24px;
+    overflow: hidden;
+    animation: fadeUp 0.5s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .card:nth-child(1) { animation-delay: 0.05s; }
+  .card:nth-child(2) { animation-delay: 0.1s; }
+  .card:nth-child(3) { animation-delay: 0.15s; }
+  .card:nth-child(4) { animation-delay: 0.2s; }
+  .card:nth-child(5) { animation-delay: 0.25s; }
+  .card:nth-child(6) { animation-delay: 0.3s; }
+  .card:nth-child(7) { animation-delay: 0.35s; }
+
+  .card-header {
+    padding: 16px 24px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 2px solid #f0f0f0;
+  }
+  .card-icon {
+    width: 42px; height: 42px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .card-title {
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .card-step {
+    font-size: 11px;
+    font-weight: 700;
+    opacity: 0.6;
+    margin-top: 1px;
+  }
+  .card-body {
+    padding: 20px 24px;
+  }
+
+  /* COLOR THEMES PER CARD */
+  .theme-info .card-header { background: var(--biru-muda); }
+  .theme-info .card-icon { background: var(--biru); color: white; }
+  .theme-info .card-title { color: var(--biru); }
+
+  .theme-green .card-header { background: #e8f5e9; }
+  .theme-green .card-icon { background: var(--hijau); color: white; }
+  .theme-green .card-title { color: var(--hijau); }
+
+  .theme-yellow .card-header { background: var(--kuning-muda); }
+  .theme-yellow .card-icon { background: var(--kuning); color: #1a1a2e; }
+  .theme-yellow .card-title { color: #e65100; }
+
+  .theme-orange .card-header { background: var(--oranye-muda); }
+  .theme-orange .card-icon { background: var(--oranye); color: white; }
+  .theme-orange .card-title { color: var(--oranye); }
+
+  .theme-purple .card-header { background: var(--ungu-muda); }
+  .theme-purple .card-icon { background: var(--ungu); color: white; }
+  .theme-purple .card-title { color: var(--ungu); }
+
+  .theme-red .card-header { background: var(--merah-muda); }
+  .theme-red .card-icon { background: var(--merah); color: white; }
+  .theme-red .card-title { color: var(--merah); }
+
+  /* TUJUAN TABLE */
+  .tujuan-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .tujuan-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: #e8f5e9;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .tujuan-list li .num {
+    background: var(--hijau);
+    color: white;
+    font-weight: 800;
+    font-size: 13px;
+    border-radius: 50%;
+    width: 26px; height: 26px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* PETUNJUK */
+  .petunjuk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .petunjuk-item {
+    background: var(--abu);
+    border-radius: 14px;
+    padding: 14px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  .petunjuk-item .emoji { font-size: 28px; display: block; margin-bottom: 6px; }
+
+  /* MATERI */
+  .materi-box {
+    background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+    border-left: 5px solid var(--hijau);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .materi-box h4 { color: var(--hijau); font-size: 15px; margin-bottom: 6px; }
+
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .vocab-card {
+    background: white;
+    border: 2px solid var(--hijau-terang);
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+  .vocab-card .sunda { font-weight: 800; color: var(--hijau); font-size: 15px; }
+  .vocab-card .arti { color: #555; margin-top: 2px; }
+
+  /* CONTOH DIALOG */
+  .dialog-box {
+    background: #f9fbe7;
+    border-radius: 16px;
+    padding: 18px;
+    margin: 14px 0;
+  }
+  .dialog-line {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+  }
+  .dialog-avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .dialog-avatar.a { background: #bbdefb; }
+  .dialog-avatar.b { background: #c8e6c9; }
+  .dialog-bubble {
+    background: white;
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: 13px;
+    line-height: 1.6;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    flex: 1;
+  }
+  .dialog-name {
+    font-weight: 800;
+    font-size: 12px;
+    color: var(--hijau);
+    margin-bottom: 2px;
+  }
+
+  /* KEGIATAN / AKTIVITAS */
+  .aktivitas-label {
+    display: inline-block;
+    background: var(--kuning);
+    color: #1a1a2e;
+    font-weight: 800;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .aktivitas-label.biru { background: var(--biru); color: white; }
+  .aktivitas-label.hijau { background: var(--hijau); color: white; }
+  .aktivitas-label.merah { background: var(--merah); color: white; }
+
+  .soal-block {
+    background: #f8f9fa;
+    border-radius: 14px;
+    padding: 16px 18px;
+    margin-bottom: 16px;
+    border: 1.5px solid #e0e0e0;
+  }
+  .soal-block .soal-num {
+    font-weight: 800;
+    font-size: 13px;
+    color: var(--hijau);
+    margin-bottom: 6px;
+  }
+  .soal-block p { font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+
+  textarea {
+    width: 100%;
+    border: 2px solid #c8e6c9;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    resize: vertical;
+    min-height: 80px;
+    transition: border-color 0.2s;
+    background: white;
+  }
+  textarea:focus { outline: none; border-color: var(--hijau); }
+
+  input[type="text"] {
+    width: 100%;
+    border: 2px solid #c8e6c9;
+    border-radius: 10px;
+    padding: 9px 12px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    transition: border-color 0.2s;
+  }
+  input[type="text"]:focus { outline: none; border-color: var(--hijau); }
+
+  /* PILIHAN GANDA */
+  .pilihan-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 6px; }
+  .pilihan-list li label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.18s;
+  }
+  .pilihan-list li label:hover { border-color: var(--hijau-muda); background: #f1f8e9; }
+  .pilihan-list li input[type="radio"] { accent-color: var(--hijau); width: 16px; height: 16px; }
+  .pilihan-list li input[type="radio"]:checked + span { color: var(--hijau); }
+  .pilihan-list li:has(input:checked) label { border-color: var(--hijau); background: #e8f5e9; }
+
+  /* DRAG DROP */
+  .dragdrop-area {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px;
+    min-height: 56px;
+    background: #f1f8e9;
+    border: 2px dashed var(--hijau-terang);
+    border-radius: 12px;
+    margin: 8px 0;
+  }
+  .drag-chip {
+    background: var(--hijau);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: grab;
+    user-select: none;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .drag-chip:active { cursor: grabbing; transform: scale(1.05); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+  .drag-chip.dragging { opacity: 0.5; }
+
+  .blank-drop {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+    height: 34px;
+    background: white;
+    border: 2px dashed var(--hijau);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--hijau);
+    padding: 0 10px;
+    transition: background 0.2s;
+    vertical-align: middle;
+    margin: 0 4px;
+  }
+  .blank-drop.filled { background: #e8f5e9; border-style: solid; }
+  .blank-drop.over { background: #c8e6c9; }
+
+  .kalimat-dragdrop { font-size: 14px; line-height: 2.4; }
+
+  /* TOMBOL CEK */
+  .btn-cek {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--hijau);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 22px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-cek:hover { background: #1b5e20; transform: translateY(-1px); }
+  .btn-cek:active { transform: translateY(0); }
+
+  .btn-reset {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #e0e0e0;
+    color: #444;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 18px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 8px;
+    transition: background 0.2s;
+  }
+  .btn-reset:hover { background: #bdbdbd; }
+
+  .feedback {
+    display: none;
+    margin-top: 10px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .feedback.benar { background: #e8f5e9; color: #2e7d32; border: 1.5px solid #a5d6a7; display: block; }
+  .feedback.salah { background: var(--merah-muda); color: var(--merah); border: 1.5px solid #ef9a9a; display: block; }
+
+  /* REFLEKSI */
+  .refleksi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+  }
+  .refleksi-item {
+    background: #f9fbe7;
+    border-radius: 14px;
+    padding: 14px;
+  }
+  .refleksi-item label {
+    font-weight: 800;
+    font-size: 13px;
+    display: block;
+    margin-bottom: 8px;
+    color: var(--hijau);
+  }
+
+  /* EMOJI RATING */
+  .emoji-rating { display: flex; gap: 12px; justify-content: center; margin-top: 14px; flex-wrap: wrap; }
+  .emoji-btn {
+    background: none;
+    border: 2px solid transparent;
+    border-radius: 16px;
+    padding: 10px 16px;
+    font-size: 28px;
+    cursor: pointer;
+    transition: all 0.18s;
+    display: flex; flex-direction: column; align-items: center; gap: 4px;
+  }
+  .emoji-btn span { font-size: 12px; font-weight: 700; color: #555; }
+  .emoji-btn:hover, .emoji-btn.active { border-color: var(--hijau); background: #e8f5e9; transform: scale(1.1); }
+
+  /* SKOR */
+  .skor-box {
+    background: linear-gradient(135deg, #1b5e20, #2e7d32);
+    color: white;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .skor-angka { font-family: 'Bubblegum Sans', cursive; font-size: 52px; line-height: 1; }
+  .skor-label { font-size: 14px; opacity: 0.8; margin-top: 4px; }
+
+  /* DIVIDER */
+  .divider {
+    height: 3px;
+    background: linear-gradient(90deg, var(--hijau), var(--kuning), var(--hijau));
+    border-radius: 3px;
+    margin: 6px 0 16px;
+  }
+
+  /* IDENTITAS SISWA */
+  .identitas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .identitas-grid .full { grid-column: 1 / -1; }
+  .form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 800;
+    color: #666;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  @media (max-width: 600px) {
+    .identitas-grid { grid-template-columns: 1fr; }
+    .card-body { padding: 16px; }
+    .card-header { padding: 14px 16px; }
+  }
+
+  /* PROGRESS BAR */
+  .progress-wrap { background: #e0e0e0; border-radius: 20px; height: 10px; margin: 10px 0 4px; overflow: hidden; }
+  .progress-bar { height: 100%; border-radius: 20px; background: linear-gradient(90deg, var(--hijau), var(--hijau-muda)); transition: width 0.6s ease; }
+
+  .info-strip {
+    background: var(--biru-muda);
+    border-left: 4px solid var(--biru);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--biru);
+    margin-bottom: 14px;
+  }
+
+  .step-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+    margin-bottom: 12px;
+  }
+  .step-label::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: #e0e0e0;
+    border-radius: 2px;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-inner">
+    <div class="header-badge">📚 E-LKPD Interaktif</div>
+    <h1>Paguneman<br>dina Bahasa Sunda</h1>
+    <div class="header-sub">Percakapan Sehari-hari dalam Bahasa Sunda</div>
+    <div class="header-meta">
+      <span class="meta-chip">🏫 Kelas 4 SD</span>
+      <span class="meta-chip">📖 Bahasa Sunda</span>
+      <span class="meta-chip">🌱 Kurikulum Merdeka</span>
+      <span class="meta-chip">🔬 Pendekatan Saintifik</span>
+      <span class="meta-chip">⏱ 2 × 35 Menit</span>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- IDENTITAS SISWA -->
+  <div class="card theme-info">
+    <div class="card-header">
+      <div class="card-icon">📝</div>
+      <div>
+        <div class="card-title">Identitas Siswa</div>
+        <div class="card-step">Isi data diri kamu terlebih dahulu</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="identitas-grid">
+        <div class="form-group full">
+          <label>Nama Lengkap</label>
+          <input type="text" id="nama" placeholder="Tulis nama kamu...">
+        </div>
+        <div class="form-group">
+          <label>Kelas</label>
+          <input type="text" id="kelas" placeholder="Contoh: 4A">
+        </div>
+        <div class="form-group">
+          <label>Nomor Absen</label>
+          <input type="text" id="absen" placeholder="Contoh: 12">
+        </div>
+        <div class="form-group">
+          <label>Nama Guru</label>
+          <input type="text" id="guru" placeholder="Nama guru pengajar">
+        </div>
+        <div class="form-group">
+          <label>Tanggal</label>
+          <input type="text" id="tanggal" placeholder="Contoh: 3 Juni 2026">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KOMPETENSI & TUJUAN -->
+  <div class="card theme-green">
+    <div class="card-header">
+      <div class="card-icon">🎯</div>
+      <div>
+        <div class="card-title">Capaian & Tujuan Pembelajaran</div>
+        <div class="card-step">Kamu akan belajar apa hari ini?</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="materi-box" style="margin-bottom:12px;">
+        <h4>📌 Capaian Pembelajaran (CP)</h4>
+        Peserta didik mampu memahami dan menggunakan Bahasa Sunda dalam percakapan (paguneman) sehari-hari dengan ragam bahasa yang sesuai dan santun.
+      </div>
+      <div class="divider"></div>
+      <p style="font-weight:800;font-size:13px;color:#666;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">Setelah belajar hari ini, kamu dapat:</p>
+      <ul class="tujuan-list">
+        <li><span class="num">1</span> Menjelaskan pengertian paguneman (percakapan) dalam Bahasa Sunda</li>
+        <li><span class="num">2</span> Memahami kosakata dan ungkapan yang sering digunakan dalam paguneman</li>
+        <li><span class="num">3</span> Membuat percakapan sederhana dalam Bahasa Sunda dengan ragam bahasa yang tepat</li>
+        <li><span class="num">4</span> Memperagakan paguneman dengan percaya diri bersama teman</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PETUNJUK PENGERJAAN -->
+  <div class="card theme-yellow">
+    <div class="card-header">
+      <div class="card-icon">📋</div>
+      <div>
+        <div class="card-title">Petunjuk Pengerjaan</div>
+        <div class="card-step">Baca baik-baik sebelum mulai!</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="petunjuk-grid">
+        <div class="petunjuk-item"><span class="emoji">🙏</span>Berdoa terlebih dahulu sebelum mengerjakan</div>
+        <div class="petunjuk-item"><span class="emoji">📖</span>Baca materi dengan teliti dan seksama</div>
+        <div class="petunjuk-item"><span class="emoji">✍️</span>Isi setiap kolom jawaban dengan lengkap</div>
+        <div class="petunjuk-item"><span class="emoji">🖱️</span>Klik tombol "Cek Jawaban" untuk menilai</div>
+        <div class="petunjuk-item"><span class="emoji">🤝</span>Kerja sama untuk kegiatan kelompok</div>
+        <div class="petunjuk-item"><span class="emoji">🙋</span>Tanya guru jika ada yang belum dipahami</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEGIATAN 1: MENGAMATI -->
+  <div class="card theme-green">
+    <div class="card-header">
+      <div class="card-icon">👁️</div>
+      <div>
+        <div class="card-title">Kegiatan 1 – Mengamati</div>
+        <div class="card-step">Langkah 1 dari 5 (Pendekatan Saintifik)</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <span class="aktivitas-label hijau">📚 Materi Paguneman</span>
+
+      <div class="materi-box">
+        <h4>🗣️ Naon eta Paguneman?</h4>
+        <strong>Paguneman</strong> nyaéta <em>percakapan</em> antara dua orang atawa leuwih. Dina paguneman, urang ngagunakeun basa anu sopan jeung hadé. Aya dua ragam basa nu ilahar dipaké:
+        <ul style="margin-top:8px;padding-left:18px;">
+          <li><strong>Basa loma</strong> – dipaké ka babaturan salabuh (teman sebaya)</li>
+          <li><strong>Basa lemes/hormat</strong> – dipaké ka kolot, guru, atawa nu leuwih kolot</li>
+        </ul>
+      </div>
+
+      <div class="materi-box">
+        <h4>📖 Kosakata Penting (Kecap Penting)</h4>
+        <div class="vocab-grid">
+          <div class="vocab-card"><div class="sunda">wilujeng enjing</div><div class="arti">selamat pagi</div></div>
+          <div class="vocab-card"><div class="sunda">wilujeng siang</div><div class="arti">selamat siang</div></div>
+          <div class="vocab-card"><div class="sunda">wilujeng sonten</div><div class="arti">selamat sore</div></div>
+          <div class="vocab-card"><div class="sunda">kumaha damang?</div><div class="arti">apa kabar? (ke orang tua)</div></div>
+          <div class="vocab-card"><div class="sunda">kumaha damangna?</div><div class="arti">apa kabarnya?</div></div>
+          <div class="vocab-card"><div class="sunda">alhamdulillah damang</div><div class="arti">alhamdulillah sehat</div></div>
+          <div class="vocab-card"><div class="sunda">hatur nuhun</div><div class="arti">terima kasih</div></div>
+          <div class="vocab-card"><div class="sunda">mangga</div><div class="arti">silakan</div></div>
+          <div class="vocab-card"><div class="sunda">punten</div><div class="arti">permisi / maaf</div></div>
+          <div class="vocab-card"><div class="sunda">sami-sami</div><div class="arti">sama-sama</div></div>
+          <div class="vocab-card"><div class="sunda">ka mana?</div><div class="arti">mau ke mana?</div></div>
+          <div class="vocab-card"><div class="sunda">ti mana?</div><div class="arti">dari mana?</div></div>
+        </div>
+      </div>
+
+      <div class="materi-box">
+        <h4>💬 Contoh Paguneman – Di Jalan</h4>
+        <div class="dialog-box">
+          <div class="dialog-line">
+            <div class="dialog-avatar a">👧</div>
+            <div class="dialog-bubble">
+              <div class="dialog-name">Siti</div>
+              Wilujeng enjing, Kang! Punten, Kang Ujang teu acan sarapan?
+            </div>
+          </div>
+          <div class="dialog-line">
+            <div class="dialog-avatar b">👨</div>
+            <div class="dialog-bubble">
+              <div class="dialog-name">Kang Ujang</div>
+              Wilujeng enjing, Siti. Parantos, nuhun. Siti rék ka mana?
+            </div>
+          </div>
+          <div class="dialog-line">
+            <div class="dialog-avatar a">👧</div>
+            <div class="dialog-bubble">
+              <div class="dialog-name">Siti</div>
+              Abdi rék ka sakola, Kang.
+            </div>
+          </div>
+          <div class="dialog-line">
+            <div class="dialog-avatar b">👨</div>
+            <div class="dialog-bubble">
+              <div class="dialog-name">Kang Ujang</div>
+              Mangga, ati-ati di jalan ya, Siti!
+            </div>
+          </div>
+          <div class="dialog-line">
+            <div class="dialog-avatar a">👧</div>
+            <div class="dialog-bubble">
+              <div class="dialog-name">Siti</div>
+              Muhun, hatur nuhun, Kang!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="soal-block">
+        <div class="soal-num">✏️ Pertanyaan Pengamatan</div>
+        <p>Saatos maca contoh paguneman di luhur, tuliskeun <strong>3 hal</strong> anu anjen pendakkan:</p>
+        <textarea id="pengamatan" placeholder="Contoh: 1. Siti make basa lemes ka Kang Ujang...&#10;2. ...&#10;3. ..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEGIATAN 2: MENANYA -->
+  <div class="card theme-yellow">
+    <div class="card-header">
+      <div class="card-icon">❓</div>
+      <div>
+        <div class="card-title">Kegiatan 2 – Menanya</div>
+        <div class="card-step">Langkah 2 dari 5 (Pendekatan Saintifik)</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="info-strip">💡 Tulis pertanyaan yang muncul di pikiranmu setelah membaca materi!</div>
+
+      <div class="soal-block">
+        <div class="soal-num">Pertanyaan 1</div>
+        <p>Naon bédana <strong>basa loma</strong> jeung <strong>basa lemes</strong> dina paguneman?</p>
+        <textarea id="menanya1" placeholder="Tulis jawabanmu di sini..."></textarea>
+      </div>
+
+      <div class="soal-block">
+        <div class="soal-num">Pertanyaan 2</div>
+        <p>Kumaha cara ngasah kamampuh basa Sunda urang supaya leuwih hadé?</p>
+        <textarea id="menanya2" placeholder="Tulis jawabanmu di sini..."></textarea>
+      </div>
+
+      <div class="soal-block">
+        <div class="soal-num">🌟 Pertanyaan Sendiri</div>
+        <p>Tulis <strong>1 perhatosan</strong> anu muncul di pikiran anjen tina paguneman:</p>
+        <textarea id="menanya3" placeholder="Tulis pertanyaanmu sendiri..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEGIATAN 3: MENCOBA / MENGUMPULKAN INFORMASI -->
+  <div class="card theme-orange">
+    <div class="card-header">
+      <div class="card-icon">🔍</div>
+      <div>
+        <div class="card-title">Kegiatan 3 – Mencoba</div>
+        <div class="card-step">Langkah 3 dari 5 (Pendekatan Saintifik)</div>
+      </div>
+    </div>
+    <div class="card-body">
+
+      <div class="step-label">A Pilihan Ganda Interaktif</div>
+
+      <!-- Soal 1 PG -->
+      <div class="soal-block">
+        <div class="soal-num">Soal 1</div>
+        <p>Ucapan salam dina waktu sonten (sore hari) dina Bahasa Sunda nyaéta...</p>
+        <ul class="pilihan-list" id="pg1">
+          <li><label><input type="radio" name="pg1" value="a"><span>A. Wilujeng enjing</span></label></li>
+          <li><label><input type="radio" name="pg1" value="b"><span>B. Wilujeng sonten</span></label></li>
+          <li><label><input type="radio" name="pg1" value="c"><span>C. Wilujeng siang</span></label></li>
+          <li><label><input type="radio" name="pg1" value="d"><span>D. Wilujeng wengi</span></label></li>
+        </ul>
+        <button class="btn-cek" onclick="cekPG('pg1','b','fb_pg1')">✔ Cek Jawaban</button>
+        <button class="btn-reset" onclick="resetPG('pg1','fb_pg1')">↺ Reset</button>
+        <div class="feedback" id="fb_pg1"></div>
+      </div>
+
+      <!-- Soal 2 PG -->
+      <div class="soal-block">
+        <div class="soal-num">Soal 2</div>
+        <p>Dina paguneman ka guru, ragam basa nu pantes dipaké nyaéta...</p>
+        <ul class="pilihan-list" id="pg2">
+          <li><label><input type="radio" name="pg2" value="a"><span>A. Basa loma</span></label></li>
+          <li><label><input type="radio" name="pg2" value="b"><span>B. Basa kasar</span></label></li>
+          <li><label><input type="radio" name="pg2" value="c"><span>C. Basa lemes</span></label></li>
+          <li><label><input type="radio" name="pg2" value="d"><span>D. Basa wewengkon</span></label></li>
+        </ul>
+        <button class="btn-cek" onclick="cekPG('pg2','c','fb_pg2')">✔ Cek Jawaban</button>
+        <button class="btn-reset" onclick="resetPG('pg2','fb_pg2')">↺ Reset</button>
+        <div class="feedback" id="fb_pg2"></div>
+      </div>
+
+      <!-- Soal 3 PG -->
+      <div class="soal-block">
+        <div class="soal-num">Soal 3</div>
+        <p>"Hatur nuhun" dina Bahasa Indonesia mibanda harti...</p>
+        <ul class="pilihan-list" id="pg3">
+          <li><label><input type="radio" name="pg3" value="a"><span>A. Permisi</span></label></li>
+          <li><label><input type="radio" name="pg3" value="b"><span>B. Selamat datang</span></label></li>
+          <li><label><input type="radio" name="pg3" value="c"><span>C. Terima kasih</span></label></li>
+          <li><label><input type="radio" name="pg3" value="d"><span>D. Maaf</span></label></li>
+        </ul>
+        <button class="btn-cek" onclick="cekPG('pg3','c','fb_pg3')">✔ Cek Jawaban</button>
+        <button class="btn-reset" onclick="resetPG('pg3','fb_pg3')">↺ Reset</button>
+        <div class="feedback" id="fb_pg3"></div>
+      </div>
+
+      <!-- Soal 4 PG -->
+      <div class="soal-block">
+        <div class="soal-num">Soal 4</div>
+        <p>Nalika rék menta izin ka guru pikeun ka kamar mandi, kecap nu dipaké nyaéta...</p>
+        <ul class="pilihan-list" id="pg4">
+          <li><label><input type="radio" name="pg4" value="a"><span>A. Mangga</span></label></li>
+          <li><label><input type="radio" name="pg4" value="b"><span>B. Punten</span></label></li>
+          <li><label><input type="radio" name="pg4" value="c"><span>C. Sami-sami</span></label></li>
+          <li><label><input type="radio" name="pg4" value="d"><span>D. Alhamdulillah</span></label></li>
+        </ul>
+        <button class="btn-cek" onclick="cekPG('pg4','b','fb_pg4')">✔ Cek Jawaban</button>
+        <button class="btn-reset" onclick="resetPG('pg4','fb_pg4')">↺ Reset</button>
+        <div class="feedback" id="fb_pg4"></div>
+      </div>
+
+      <div class="step-label" style="margin-top:24px;">B Lengkapi Kalimat (Drag & Drop)</div>
+
+      <div class="soal-block">
+        <div class="soal-num">Soal 5 – Sered kecap anu bener kana kotak kosong!</div>
+        <p>Lengkapi paguneman ieu ku cara nyered kecap ti handap:</p>
+
+        <div style="background:#fff;border-radius:12px;padding:14px;margin-bottom:12px;border:1.5px solid #e0e0e0;">
+          <div class="kalimat-dragdrop">
+            <strong>Andi:</strong> <span class="blank-drop" id="drop1" ondrop="drop(event,'drop1')" ondragover="allowDrop(event)">___?___</span>, Budi! Kamu ti mana?<br><br>
+            <strong>Budi:</strong> <span class="blank-drop" id="drop2" ondrop="drop(event,'drop2')" ondragover="allowDrop(event)">___?___</span>, Andi! Abdi ti warung.
+          </div>
+        </div>
+
+        <p style="font-size:13px;font-weight:700;color:#666;margin-bottom:8px;">Pilih kecap nu bener:</p>
+        <div class="dragdrop-area" id="chips-area">
+          <div class="drag-chip" draggable="true" ondragstart="drag(event)" id="chip1" data-val="Wilujeng enjing">Wilujeng enjing</div>
+          <div class="drag-chip" draggable="true" ondragstart="drag(event)" id="chip2" data-val="Wilujeng sonten">Wilujeng sonten</div>
+          <div class="drag-chip" draggable="true" ondragstart="drag(event)" id="chip3" data-val="Hatur nuhun">Hatur nuhun</div>
+          <div class="drag-chip" draggable="true" ondragstart="drag(event)" id="chip4" data-val="Punten">Punten</div>
+        </div>
+
+        <button class="btn-cek" onclick="cekDragDrop()">✔ Cek Jawaban</button>
+        <button class="btn-reset" onclick="resetDragDrop()">↺ Reset</button>
+        <div class="feedback" id="fb_drag"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- KEGIATAN 4: MENALAR / ASOSIASI -->
+  <div class="card theme-info">
+    <div class="card-header">
+      <div class="card-icon">🧠</div>
+      <div>
+        <div class="card-title">Kegiatan 4 – Menalar</div>
+        <div class="card-step">Langkah 4 dari 5 (Pendekatan Saintifik)</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="info-strip">💬 Gunakan pikiranmu untuk membuat paguneman sendiri!</div>
+
+      <div class="soal-block">
+        <div class="soal-num">Tugas Menalar 1</div>
+        <p>Pasangkeun kecap Bahasa Sunda di handap ieu jeung artinya dina Bahasa Indonesia! Tulis nomor anu cocok:</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:12px 0;">
+          <div>
+            <p style="font-weight:800;font-size:13px;margin-bottom:8px;">Bahasa Sunda:</p>
+            <ol style="padding-left:18px;font-size:14px;line-height:2;">
+              <li>Kumaha damang?</li>
+              <li>Mangga linggih</li>
+              <li>Sami-sami</li>
+              <li>Ka mana?</li>
+              <li>Wilujeng wengi</li>
+            </ol>
+          </div>
+          <div>
+            <p style="font-weight:800;font-size:13px;margin-bottom:8px;">Bahasa Indonesia:</p>
+            <div style="font-size:14px;line-height:2;">
+              <div>A. Selamat malam</div>
+              <div>B. Sama-sama</div>
+              <div>C. Apa kabar?</div>
+              <div>D. Mau ke mana?</div>
+              <div>E. Silakan duduk</div>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:13px;font-weight:700;margin-bottom:6px;">Tulis jawabanmu (contoh: 1-C, 2-E, ...):</p>
+        <input type="text" id="pasangkan" placeholder="1-___, 2-___, 3-___, 4-___, 5-___">
+        <button class="btn-cek" style="margin-top:10px;" onclick="cekPasangkan()">✔ Cek Jawaban</button>
+        <div class="feedback" id="fb_pasang"></div>
+      </div>
+
+      <div class="soal-block">
+        <div class="soal-num">Tugas Menalar 2 – Koreksi Paguneman</div>
+        <p>Di handap ieu aya paguneman anu <strong>kurang tepat</strong>. Perbaiki ragam basa na jadi leuwih sopan! (basa lemes ka guru)</p>
+        <div class="dialog-box" style="margin-bottom:12px;">
+          <div class="dialog-line">
+            <div class="dialog-avatar a">👦</div>
+            <div class="dialog-bubble">
+              <div class="dialog-name">Asep (ke Guru)</div>
+              Eh, Bu! Abdi teu ngarti tugas na. Bisa bantu kuring?
+            </div>
+          </div>
+        </div>
+        <p style="font-size:13px;font-weight:700;margin-bottom:6px;">Tulis versi yang lebih sopan:</p>
+        <textarea id="koreksi" placeholder="Tulis perbaikan paguneman di sini..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- DISKUSI KELOMPOK -->
+  <div class="card theme-purple">
+    <div class="card-header">
+      <div class="card-icon">💭</div>
+      <div>
+        <div class="card-title">Diskusi Kelompok – Soal Diskusi Siswa</div>
+        <div class="card-step">Diskusikeun babarengan jeung 2–3 babaturan sakelompok</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="info-strip">👥 Diskusikeun heula jeung babaturan sakelompok, tuluy tulis hasil diskusina!</div>
+
+      <div class="soal-block">
+        <div class="soal-num">Anggota Kelompok</div>
+        <p>Tulis ngaran anggota kelompok anjen:</p>
+        <input type="text" id="anggota_kelompok" placeholder="Contoh: Asep, Siti, Ujang, Euis">
+      </div>
+
+      <div class="soal-block">
+        <div class="soal-num">Soal Diskusi 1</div>
+        <p>Naha penting urang Sunda kudu tetep ngagunakeun <strong>basa lemes</strong> waktu nyarita ka anu leuwih kolot (kolot, guru, jsb)? Bere alesan jeung conto tina kahirupan sapopoé!</p>
+        <textarea id="diskusi1" placeholder="Tulis hasil diskusi kelompok di sini..."></textarea>
+      </div>
+
+      <div class="soal-block">
+        <div class="soal-num">Soal Diskusi 2</div>
+        <p>Bandingkeun kumaha cara kamu nyarita ka <strong>babaturan sapantar</strong> jeung ka <strong>guru/kolot</strong>. Naon bédana ragam basa nu dipaké? Diskusikeun jeung kelompok, tuluy tulis 3 conto kalimat pikeun masing-masing situasi.</p>
+        <textarea id="diskusi2" placeholder="Tulis hasil diskusi kelompok di sini..."></textarea>
+      </div>
+
+      <div class="soal-block">
+        <div class="soal-num">Soal Diskusi 3 – Studi Kasus</div>
+        <p>Bayangkeun: Aya murid anyar ti luar kota anu can biasa nyarita basa Sunda. Manéhna rék babaturan jeung kamu. Diskusikeun jeung kelompok: <strong>kumaha cara nu pas pikeun ngajak nyarita basa Sunda anu sopan jeung ramah</strong> ka murid anyar éta?</p>
+        <textarea id="diskusi3" placeholder="Tulis hasil diskusi kelompok di sini..."></textarea>
+      </div>
+
+      <div class="soal-block">
+        <div class="soal-num">Soal Diskusi 4 – Refleksi Kelompok</div>
+        <p>Numutkeun pamadegan kelompok kamu, naon <strong>mangpaat</strong> diajar paguneman basa Sunda pikeun kahirupan sapopoé jeung pikeun ngajaga budaya Sunda?</p>
+        <textarea id="diskusi4" placeholder="Tulis hasil diskusi kelompok di sini..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEGIATAN 5: MENGOMUNIKASIKAN -->
+  <div class="card theme-red">
+    <div class="card-header">
+      <div class="card-icon">🎤</div>
+      <div>
+        <div class="card-title">Kegiatan 5 – Mengomunikasikan</div>
+        <div class="card-step">Langkah 5 dari 5 (Pendekatan Saintifik)</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="info-strip">🤝 Kerjasama dengan teman untuk membuat dan memeragakan paguneman!</div>
+
+      <div class="soal-block">
+        <div class="soal-num">Tugas Utama – Nyieun Paguneman Sorangan</div>
+        <p>Jieun paguneman anu merenah jeung teman sebangkumu! Paguneman ngeunaan <strong>saling nyapa di sakola</strong> dina waktu enjing. Minimal <strong>6 babak percakapan</strong>, ngagunakeun basa Sunda nu bener.</p>
+        <p style="font-size:13px;color:#888;margin: 6px 0 10px;">Gunakan kosakata: wilujeng enjing, kumaha damang, hatur nuhun, punten, mangga, dll.</p>
+        <textarea id="buat_paguneman" style="min-height:160px;" placeholder="Contoh format:&#10;Nama 1: ...&#10;Nama 2: ...&#10;Nama 1: ...&#10;(minimal 6 babak)"></textarea>
+      </div>
+
+      <div class="soal-block">
+        <div class="soal-num">Refleksi Menulis</div>
+        <p>Naon anu paling hésé (sulit) waktu nyieun paguneman dina Bahasa Sunda?</p>
+        <textarea id="refleksi_nulis" placeholder="Tulis pengalamanmu di sini..."></textarea>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- REFLEKSI AKHIR -->
+  <div class="card theme-green">
+    <div class="card-header">
+      <div class="card-icon">🌟</div>
+      <div>
+        <div class="card-title">Refleksi Pembelajaran</div>
+        <div class="card-step">Bagaimana perasaanmu hari ini?</div>
+      </div>
+    </div>
+    <div class="card-body">
+
+      <p style="text-align:center;font-weight:800;font-size:15px;margin-bottom:6px;">Pilih emoji yang menggambarkan pemahamanmu:</p>
+      <div class="emoji-rating">
+        <button class="emoji-btn" onclick="pilihEmoji(this,'😕')">😕<span>Bingung</span></button>
+        <button class="emoji-btn" onclick="pilihEmoji(this,'🙂')">🙂<span>Cukup paham</span></button>
+        <button class="emoji-btn" onclick="pilihEmoji(this,'😊')">😊<span>Paham</span></button>
+        <button class="emoji-btn" onclick="pilihEmoji(this,'🤩')">🤩<span>Sangat paham!</span></button>
+      </div>
+
+      <div class="divider" style="margin-top:18px;"></div>
+
+      <div class="refleksi-grid" style="margin-top:16px;">
+        <div class="refleksi-item">
+          <label>✅ Yang sudah aku pahami:</label>
+          <textarea id="ref1" placeholder="Tuliskan disini..." style="min-height:70px;"></textarea>
+        </div>
+        <div class="refleksi-item">
+          <label>❓ Yang belum aku pahami:</label>
+          <textarea id="ref2" placeholder="Tuliskan disini..." style="min-height:70px;"></textarea>
+        </div>
+        <div class="refleksi-item">
+          <label>💪 Yang akan aku lakukan:</label>
+          <textarea id="ref3" placeholder="Tuliskan disini..." style="min-height:70px;"></textarea>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:20px;">
+        <button class="btn-cek" style="font-size:15px;padding:12px 32px;" onclick="hitungSkor()">
+          🏆 Lihat Hasil Jawabanku
+        </button>
+      </div>
+
+      <div class="skor-box" id="skor-box" style="display:none;">
+        <div style="font-size:14px;margin-bottom:6px;opacity:0.8;">Skor Pilihan Ganda Kamu</div>
+        <div class="skor-angka" id="skor-angka">0</div>
+        <div class="skor-label">dari 4 soal pilihan ganda</div>
+        <div style="margin-top:12px;font-size:15px;font-weight:700;" id="skor-pesan"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="text-align:center;padding:20px 0;color:#888;font-size:13px;font-weight:600;">
+    📚 E-LKPD Bahasa Sunda – Paguneman &nbsp;|&nbsp; Kelas 4 SD &nbsp;|&nbsp; Kurikulum Merdeka<br>
+    <span style="font-size:12px;opacity:0.7;">Dibuat dengan ❤️ untuk pembelajaran yang menyenangkan</span>
+  </div>
+
+</div>
+
+<script>
+// ====================== PILIHAN GANDA ======================
+const kunciPG = { pg1: 'b', pg2: 'c', pg3: 'c', pg4: 'b' };
+
+function cekPG(nama, kunci, fbId) {
+  const selected = document.querySelector(`input[name="${nama}"]:checked`);
+  const fb = document.getElementById(fbId);
+  if (!selected) {
+    fb.className = 'feedback salah';
+    fb.textContent = '⚠️ Pilih salah satu jawaban terlebih dahulu!';
+    return;
+  }
+  if (selected.value === kunci) {
+    fb.className = 'feedback benar';
+    fb.innerHTML = '✅ <strong>Leres! (Benar!)</strong> Jawaban kamu tepat! 🎉';
+  } else {
+    fb.className = 'feedback salah';
+    fb.innerHTML = '❌ <strong>Teu leres. (Kurang tepat.)</strong> Coba baca materi kembali, ya!';
+  }
+}
+
+function resetPG(nama, fbId) {
+  document.querySelectorAll(`input[name="${nama}"]`).forEach(r => r.checked = false);
+  const fb = document.getElementById(fbId);
+  fb.className = 'feedback';
+  fb.textContent = '';
+}
+
+// ====================== DRAG DROP ======================
+let draggedChip = null;
+
+function drag(event) {
+  draggedChip = event.target;
+  event.target.classList.add('dragging');
+  event.dataTransfer.setData('text', event.target.id);
+}
+
+function allowDrop(event) {
+  event.preventDefault();
+  event.target.classList.add('over');
+}
+
+function drop(event, dropId) {
+  event.preventDefault();
+  const dropEl = document.getElementById(dropId);
+  dropEl.classList.remove('over');
+  if (draggedChip) {
+    dropEl.textContent = draggedChip.dataset.val;
+    dropEl.classList.add('filled');
+    draggedChip.classList.remove('dragging');
+    draggedChip.style.display = 'none';
+    draggedChip = null;
+  }
+}
+
+document.addEventListener('dragend', () => {
+  document.querySelectorAll('.blank-drop').forEach(d => d.classList.remove('over'));
+});
+
+function cekDragDrop() {
+  const d1 = document.getElementById('drop1').textContent.trim();
+  const d2 = document.getElementById('drop2').textContent.trim();
+  const fb = document.getElementById('fb_drag');
+  const correct1 = d1 === 'Wilujeng enjing';
+  const correct2 = d2 === 'Wilujeng enjing';
+  if (correct1 && correct2) {
+    fb.className = 'feedback benar';
+    fb.innerHTML = '✅ <strong>Leres pisan! (Benar sekali!)</strong> Keduanya menggunakan "Wilujeng enjing"! 🌅';
+  } else if (correct1 || correct2) {
+    fb.className = 'feedback salah';
+    fb.innerHTML = '⚠️ <strong>Hampir benar!</strong> Periksa lagi kotak yang belum tepat.';
+  } else {
+    fb.className = 'feedback salah';
+    fb.innerHTML = '❌ Belum tepat. Ingat, mereka bertemu di pagi hari!';
+  }
+}
+
+function resetDragDrop() {
+  const drops = ['drop1','drop2'];
+  drops.forEach(id => {
+    const el = document.getElementById(id);
+    el.textContent = '___?___';
+    el.classList.remove('filled');
+  });
+  document.querySelectorAll('.drag-chip').forEach(c => c.style.display = 'inline-block');
+  document.getElementById('fb_drag').className = 'feedback';
+  document.getElementById('fb_drag').textContent = '';
+}
+
+// ====================== PASANGKAN ======================
+function cekPasangkan() {
+  const jawaban = document.getElementById('pasangkan').value.toUpperCase().replace(/\s/g,'');
+  const fb = document.getElementById('fb_pasang');
+  const kunci = '1-C,2-E,3-B,4-D,5-A'.replace(/\s/g,'');
+  if (jawaban === kunci) {
+    fb.className = 'feedback benar';
+    fb.innerHTML = '✅ <strong>Leres pisan!</strong> Semua pasangan kamu tepat! 🏆';
+  } else {
+    fb.className = 'feedback salah';
+    fb.innerHTML = `❌ Masih ada yang belum tepat. Kunci: <strong>1-C, 2-E, 3-B, 4-D, 5-A</strong>. Coba lagi, ya!`;
+  }
+}
+
+// ====================== EMOJI RATING ======================
+function pilihEmoji(btn, val) {
+  document.querySelectorAll('.emoji-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// ====================== HITUNG SKOR ======================
+function hitungSkor() {
+  let benar = 0;
+  const kunci = { pg1: 'b', pg2: 'c', pg3: 'c', pg4: 'b' };
+  Object.keys(kunci).forEach(nama => {
+    const sel = document.querySelector(`input[name="${nama}"]:checked`);
+    if (sel && sel.value === kunci[nama]) benar++;
+  });
+
+  const box = document.getElementById('skor-box');
+  box.style.display = 'block';
+  document.getElementById('skor-angka').textContent = `${benar}/4`;
+
+  const pesan = document.getElementById('skor-pesan');
+  if (benar === 4) pesan.textContent = '🌟 Hebat! Kamu luar biasa! Terus pertahankan!';
+  else if (benar === 3) pesan.textContent = '😊 Bagus! Kamu hampir sempurna!';
+  else if (benar === 2) pesan.textContent = '🙂 Lumayan! Baca materi lagi ya!';
+  else pesan.textContent = '💪 Jangan menyerah! Coba baca materi kembali!';
+
+  box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+</script>
+</body>
+</html>
