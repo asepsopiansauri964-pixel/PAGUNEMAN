@@ -18,8 +18,6 @@
     --merah-muda: #ffebee;
     --oranye: #e65100;
     --oranye-muda: #fff3e0;
-    --ungu: #6a1b9a;
-    --ungu-muda: #f3e5f5;
     --putih: #ffffff;
     --abu: #f5f5f5;
     --teks: #1a1a2e;
@@ -104,12 +102,14 @@
     font-weight: 700;
     backdrop-filter: blur(4px);
   }
+
   /* MAIN */
   .main {
     max-width: 860px;
     margin: 0 auto;
     padding: 28px 16px 60px;
   }
+
   /* SECTION CARD */
   .card {
     background: white;
@@ -178,10 +178,6 @@
   .theme-orange .card-icon { background: var(--oranye); color: white; }
   .theme-orange .card-title { color: var(--oranye); }
 
-  .theme-purple .card-header { background: var(--ungu-muda); }
-  .theme-purple .card-icon { background: var(--ungu); color: white; }
-  .theme-purple .card-title { color: var(--ungu); }
-
   .theme-red .card-header { background: var(--merah-muda); }
   .theme-red .card-icon { background: var(--merah); color: white; }
   .theme-red .card-title { color: var(--merah); }
@@ -213,6 +209,7 @@
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
   }
+
   /* PETUNJUK */
   .petunjuk-grid {
     display: grid;
@@ -229,6 +226,7 @@
     line-height: 1.5;
   }
   .petunjuk-item .emoji { font-size: 28px; display: block; margin-bottom: 6px; }
+
   /* MATERI */
   .materi-box {
     background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
@@ -240,6 +238,7 @@
     line-height: 1.7;
   }
   .materi-box h4 { color: var(--hijau); font-size: 15px; margin-bottom: 6px; }
+
   .vocab-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -326,6 +325,7 @@
     margin-bottom: 6px;
   }
   .soal-block p { font-size: 14px; line-height: 1.6; margin-bottom: 10px; }
+
   textarea {
     width: 100%;
     border: 2px solid #c8e6c9;
@@ -579,6 +579,25 @@
     background: #e0e0e0;
     border-radius: 2px;
   }
+
+  /* TABEL UNDAK-USUK */
+  .undak-wrap { overflow-x: auto; margin-top: 10px; }
+  .undak-table { width: 100%; border-collapse: collapse; background: white; font-size: 12px; }
+  .undak-table th, .undak-table td { border: 1px solid #e0e0e0; padding: 8px 10px; text-align: left; }
+  .undak-table th { background: var(--hijau); color: white; font-weight: 700; font-size: 11px; text-transform: uppercase; }
+  .undak-table th span { display: block; font-size: 10px; font-weight: 400; text-transform: none; color: #e8f5e9; }
+  .undak-table tr:nth-child(even) { background: #f9f9f9; }
+  .undak-table td:first-child { text-align: center; font-weight: 700; width: 30px; }
+  .basa-loma { font-weight: 700; color: #c0392b; }
+  .basa-sorangan { color: #d35400; }
+  .basa-batur { font-weight: 700; color: #27ae60; }
+
+  /* CONTO PAGUNEMAN SITUASI */
+  .situasi { background: #e8f4f8; border-left: 4px solid var(--biru); padding: 10px 14px; margin-bottom: 12px; font-style: italic; border-radius: 0 8px 8px 0; font-size: 13px; line-height: 1.6; }
+  .dialog { background: #fafafa; border: 1px solid #eaeaea; padding: 14px; border-radius: 10px; margin-bottom: 18px; }
+  .dialog p { margin: 6px 0; font-size: 13px; line-height: 1.6; }
+  .tokoh { font-weight: 800; color: #2c3e50; display: inline-block; min-width: 90px; }
+  .materi-box h3 { color: #1565c0; font-size: 14px; margin-top: 16px; margin-bottom: 6px; }
 </style>
 </head>
 <body>
@@ -704,182 +723,95 @@
         </ul>
       </div>
 
-      <!DOCTYPE html>
-<html lang="su">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabel Undak-Usuk Basa Sunda - Kelas IV SD</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7f6;
-            color: #333;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-content: center;
-        }
-        .container {
-            width: 100%;
-            max-width: 900px;
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        h2 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-        .table-container {
-            overflow-x: auto;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-            background: #fff;
-        }
-        th, td {
-            border: 1px solid #e0e0e0;
-            padding: 12px 15px;
-            text-align: left;
-        }
-        th {
-            background-color: #2ecc71;
-            color: white;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 12px;
-        }
-        th span {
-            display: block;
-            font-size: 11px;
-            font-weight: normal;
-            text-transform: none;
-            color: #f0fbf4;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        tr:hover {
-            background-color: #f1f1f1;
-            transition: background-color 0.2s ease;
-        }
-        td:first-child {
-            text-align: center;
-            font-weight: bold;
-            width: 40px;
-        }
-        .basa-loma {
-            font-weight: bold;
-            color: #c0392b;
-        }
-        .basa-sorangan {
-            color: #d35400;
-        }
-        .basa-batur {
-            color: #27ae60;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <h2>Kosakata Undak-Usuk Basa Sunda</h2>
-    
-    <div class="table-container">
-        <table>
+      <div class="materi-box">
+        <h4>📊 Kosakata Undak-Usuk Basa Sunda</h4>
+        <div class="undak-wrap">
+          <table class="undak-table">
             <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Arti<span>(Bahasa Indonesia)</span></th>
-                    <th>Basa Loma<span>(Teman / Adik)</span></th>
-                    <th>Basa Hormat<span>(Keur Sorangan/Diri Sendiri)</span></th>
-                    <th>Basa Hormat<span>(Keur Batur/Orang Tua/Guru)</span></th>
-                </tr>
+              <tr>
+                <th>No</th>
+                <th>Arti<span>(Bahasa Indonesia)</span></th>
+                <th>Basa Loma<span>(Teman / Adik)</span></th>
+                <th>Basa Hormat<span>(Keur Sorangan/Diri Sendiri)</span></th>
+                <th>Basa Hormat<span>(Keur Batur/Orang Tua/Guru)</span></th>
+              </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Makan</td>
-                    <td class="basa-loma">Dahar</td>
-                    <td class="basa-sorangan">Neda</td>
-                    <td class="basa-batur">Tuang</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Pergi</td>
-                    <td class="basa-loma">Indit</td>
-                    <td class="basa-sorangan">Mios</td>
-                    <td class="basa-batur">Angkat</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Pulang</td>
-                    <td class="basa-loma">Balik</td>
-                    <td class="basa-sorangan">Wangsul</td>
-                    <td class="basa-batur">Mulih</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Tidur</td>
-                    <td class="basa-loma">Saré</td>
-                    <td class="basa-sorangan">Mondok</td>
-                    <td class="basa-batur">Kulem</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>Datang / Tiba</td>
-                    <td class="basa-loma">Datang</td>
-                    <td class="basa-sorangan">Dongkap</td>
-                    <td class="basa-batur">Sumping</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>Melihat</td>
-                    <td class="basa-loma">Tempo / Ningali</td>
-                    <td class="basa-sorangan">Ningali</td>
-                    <td class="basa-batur">Ningal / Tingali</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>Rumah</td>
-                    <td class="basa-loma">Imah</td>
-                    <td class="basa-sorangan">Rorompok</td>
-                    <td class="basa-batur">Bumi</td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>Membawa</td>
-                    <td class="basa-loma">Mawa</td>
-                    <td class="basa-sorangan">Bantun</td>
-                    <td class="basa-batur">Diasta</td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td>Tahu / Paham</td>
-                    <td class="basa-loma">Nyaho</td>
-                    <td class="basa-sorangan">Terang</td>
-                    <td class="basa-batur">Uninga</td>
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td>Bertanya / Bilang</td>
-                    <td class="basa-loma">Ngomong / Tanya</td>
-                    <td class="basa-sorangan">Sangem / Taros</td>
-                    <td class="basa-batur">Saurna / Diparios</td>
-                </tr>
+              <tr>
+                <td>1</td>
+                <td>Makan</td>
+                <td class="basa-loma">Dahar</td>
+                <td class="basa-sorangan">Neda</td>
+                <td class="basa-batur">Tuang</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Pergi</td>
+                <td class="basa-loma">Indit</td>
+                <td class="basa-sorangan">Mios</td>
+                <td class="basa-batur">Angkat</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Pulang</td>
+                <td class="basa-loma">Balik</td>
+                <td class="basa-sorangan">Wangsul</td>
+                <td class="basa-batur">Mulih</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Tidur</td>
+                <td class="basa-loma">Saré</td>
+                <td class="basa-sorangan">Mondok</td>
+                <td class="basa-batur">Kulem</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Datang / Tiba</td>
+                <td class="basa-loma">Datang</td>
+                <td class="basa-sorangan">Dongkap</td>
+                <td class="basa-batur">Sumping</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Melihat</td>
+                <td class="basa-loma">Tempo / Ningali</td>
+                <td class="basa-sorangan">Ningali</td>
+                <td class="basa-batur">Ningal / Tingali</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>Rumah</td>
+                <td class="basa-loma">Imah</td>
+                <td class="basa-sorangan">Rorompok</td>
+                <td class="basa-batur">Bumi</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>Membawa</td>
+                <td class="basa-loma">Mawa</td>
+                <td class="basa-sorangan">Bantun</td>
+                <td class="basa-batur">Diasta</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>Tahu / Paham</td>
+                <td class="basa-loma">Nyaho</td>
+                <td class="basa-sorangan">Terang</td>
+                <td class="basa-batur">Uninga</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>Bertanya / Bilang</td>
+                <td class="basa-loma">Ngomong / Tanya</td>
+                <td class="basa-sorangan">Sangem / Taros</td>
+                <td class="basa-batur">Saurna / Diparios</td>
+              </tr>
             </tbody>
-        </table>
-    </div>
-</div>
+          </table>
+        </div>
+      </div>
 
-</body>
-</html>
       <div class="materi-box">
         <h4>📖 Kecap Penting Sapopoe</h4>
         <div class="vocab-grid">
@@ -899,201 +831,91 @@
       </div>
 
       <div class="materi-box">
-<!DOCTYPE html>
-<html lang="su">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabel Undak-Usuk Basa Sunda - Ukuran 10</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7f6;
-            color: #333;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-        }
-        .container {
-            width: 100%;
-            max-width: 900px;
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        h2 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-size: 18px; /* Diropéa supados saimbang sareng ukuran tabel */
-        }
-        .table-container {
-            overflow-x: auto;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-            background: #fff;
-        }
-        /* Setél ukuran font janten 10 kanggo th sareng td */
-        th, td {
-            border: 1px solid #e0e0e0;
-            padding: 8px 10px; /* Jarak padding sakedik dicalitkeun supados pantes */
-            text-align: left;
-            font-size: 10pt; 
-        }
-        th {
-            background-color: #2ecc71;
-            color: white;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-        th span {
-            display: block;
-            font-size: 8pt; /* Font sub-judul th dilangkung alitkeun sakedik */
-            font-weight: normal;
-            text-transform: none;
-            color: #f0fbf4;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        tr:hover {
-            background-color: #f1f1f1;
-            transition: background-color 0.2s ease;
-        }
-        td:first-child {
-            text-align: center;
-            font-weight: bold;
-            width: 30px;
-        }
-        .basa-loma {
-            font-weight: bold;
-            color: #c0392b;
-        }
-        .basa-sorangan {
-            color: #d35400;
-        }
-        .basa-batur {
-            color: #27ae60;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
+        <h4>💬 Conto Paguneman (Percakapan) & Kaayaan Kajadianna (15 Menit)</h4>
 
-</body>
-</html>
-       <!DOCTYPE html>
-<html lang="su">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conto Paguneman Basa Sunda</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7f6;
-            color: #333;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-        }
-        .container {
-            width: 100%;
-            max-width: 800px;
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            /* Aturan ukuran font 10pt/13px sakumaha pamundut */
-            font-size: 10pt; 
-            line-height: 1.6;
-        }
-        h2 {
-            color: #2c3e50;
-            font-size: 14pt;
-            border-bottom: 2px solid #2ecc71;
-            padding-bottom: 5px;
-            margin-top: 0;
-        }
-        h3 {
-            color: #2980b9;
-            font-size: 11pt;
-            margin-top: 20px;
-            margin-bottom: 5px;
-        }
-        .situasi {
-            background-color: #e8f4f8;
-            border-left: 4px solid #3498db;
-            padding: 10px;
-            margin-bottom: 15px;
-            font-style: italic;
-            border-radius: 0 4px 4px 0;
-        }
-        .dialog {
-            background-color: #fafafa;
-            border: 1px solid #eaeaea;
-            padding: 15px;
-            border-radius: 6px;
-            margin-bottom: 25px;
-        }
-        .dialog p {
-            margin: 6px 0;
-        }
-        .tokoh {
-            font-weight: bold;
-            color: #2c3e50;
-            display: inline-block;
-            width: 90px;
-        }
-    </style>
-</head>
-<body>
+        <h3>A. Paguneman sareng Babaturan (Ragam Basa Loma)</h3>
+        <div class="situasi">
+          <strong>📌 Kaayaan Kajadian (Situasi):</strong><br>
+          Rian sareng Andi nuju ngobrol di téras sakola pas jam istirahat. Rian badé nambut kamus Basa Sunda ka bumina Dedi, tapi Rian hilap deui jalanna.
+        </div>
+        <div class="dialog">
+          <p><span class="tokoh">Rian:</span> "Andi, manéh nyaho teu di mana imahna Dédi?"</p>
+          <p><span class="tokoh">Andi:</span> "Nyaho, emangna aya naon, Rian?"</p>
+          <p><span class="tokoh">Rian:</span> "Urang rék indit ka ditu, cenah Dédi boga kamus Basa Sunda, urang rék nginjeum."</p>
+        </div>
 
-<div class="container">
-    <h2>Conto Paguneman (Percakapan) & Kaayaan Kajadianna (15 Menit)</h2>
+        <h3>B. Paguneman sareng Adi / Sahandapeun (Ragam Basa Loma)</h3>
+        <div class="situasi">
+          <strong>📌 Kaayaan Kajadian (Situasi):</strong><br>
+          Tétéh nembé mulih sakola, anjeunna panik sabab buku tugasna teu aya dina kantong. Tétéh nyampeurkeun adina anu nuju maén game di ruang tengah, bari nanyakeun naha Mamah ningal buku éta atanapi henteu.
+        </div>
+        <div class="dialog">
+          <p><span class="tokoh">Tétéh:</span> "Dé, tadi pas datang ti sakola, manéh aya mawa kamus ti méja hareup teu?"</p>
+          <p><span class="tokoh">Adik:</span> "Teu aya, Téh. Duka di mana."</p>
+          <p><span class="tokoh">Tétéh:</span> "Aduh, ari si Mamah nuju naon di kamar? Tétéh badé nanya."</p>
+          <p><span class="tokoh">Adik:</span> "Mamah mah nuju saré, jadina ulah digandéngan bisi kahudangkeun."</p>
+        </div>
 
-    <!-- BAGIAN A -->
-    <h3>A. Paguneman sareng Babaturan (Ragam Basa Loma)</h3>
-    <div class="situasi">
-        <strong>📌 Kaayaan Kajadian (Situasi):</strong><br>
-        Rian sareng Andi nuju ngobrol di téras sakola pas jam istirahat. Rian badé nambut kamus Basa Sunda ka bumina Dedi, tapi Rian hilap deui jalanna.
-    </div>
-    <div class="dialog">
-        <p><span class="tokoh">Rian:</span> "Andi, manéh nyaho teu di mana imahna Dédi?"</p>
-        <p><span class="tokoh">Andi:</span> "Nyaho, emangna aya naon, Rian?"</p>
-        <p><span class="tokoh">Rian:</span> "Urang rék indit ka ditu, cenah Dédi boga kamus Basa Sunda, urang rék nginjeum."</p>
-    </div>
+        <h3>C. Paguneman sareng Guru (Ragam Basa Hormat)</h3>
+        <div class="situasi">
+          <strong>📌 Kaayaan Kajadian (Situasi):</strong><br>
+          Rian ngetok panto kelas sabab rada kasiangan lebet sakola. Ibu Guru nuju ngadeg di payun kelas badé ngawitan pelajaran. Rian nyuhunkeun hapunten sareng ngajelaskeun alesan kasiangan kusabab kedah nyandak kamus heula.
+        </div>
+        <div class="dialog">
+          <p><span class="tokoh">Murid (Rian):</span> "Wilujeng énjing Ibu Guru, hapunten abdi rada kasiangan sumping ka kelas."</p>
+          <p><span class="tokoh">Ibu Guru:</span> "Kunaon nembé sumping, Rian?"</p>
+          <p><span class="tokoh">Murid (Rian):</span> "Mampir heula ka bumina Tante, margi kamus abdi kantun di ditu. Ibu uninga teu, kamari abdi milari heula sajam?"</p>
+          <p><span class="tokoh">Ibu Guru:</span> "Oh, kitu. Muhun ayeuna mah mangga énggal calik, urang ngawitan diajarna."</p>
+        </div>
+      </div>
 
-    <!-- BAGIAN B -->
-    <h3>B. Paguneman sareng Adi / Sahandapeun (Ragam Basa Loma)</h3>
-    <div class="situasi">
-        <strong>📌 Kaayaan Kajadian (Situasi):</strong><br>
-        Tétéh nembé mulih sakola, anjeunna panik sabab buku tugasna teu aya dina kantong. Tétéh nyampeurkeun adina anu nuju maén game di ruang tengah, bari nanyakeun naha Mamah ningal buku éta atanapi henteu.
     </div>
-    <div class="dialog">
-        <p><span class="tokoh">Tétéh:</span> "Dé, tadi pas datang ti sakola, manéh aya mawa kamus ti méja hareup teu?"</p>
-        <p><span class="tokoh">Adik:</span> "Teu aya, Téh. Duka di mana."</p>
-        <p><span class="tokoh">Tétéh:</span> "Aduh, ari si Mamah nuju naon di kamar? Tétéh badé nanya."</p>
-        <p><span class="tokoh">Adik:</span> "Mamah mah nuju saré, jadina ulah digandéngan bisi kahudangkeun."</p>
-    </div>
+  </div>
 
-        <!-- BAGIAN C -->
-    <h3>C. Paguneman sareng Guru (Ragam Basa Hormat)</h3>
-    <div class="situasi">
-        <strong>📌 Kaayaan Kajadian (Situasi):</strong><br>
-        Rian ngetok panto kelas sabab rada kasiangan lebet sakola. Ibu Guru nuju ngadeg di payun kelas badé ngawitan pelajaran. Rian nyuhunkeun hapunten sareng ngajelaskeun alesan kasiangan kusabab kedah nyandak kamus heula.
+  <!-- KAGIATAN 2: PERTAROSAN -->
+  <div class="card theme-yellow">
+    <div class="card-header">
+      <div class="card-icon">❓</div>
+      <div>
+        <div class="card-title">Kagiatan 2 – Pertarosan</div>
+      </div>
     </div>
-    <div class="dialog">
-        <p><span class="tokoh">Murid (Rian):</span> "Wilujeng énjing Ibu Guru, hapunten abdi rada kasiangan sumping ka kelas."</p>
-        <p><span class="tokoh">Ibu Guru:</span> "Kunaon nembé sumping, Rian?"</p>
-        <p><span class="tokoh">Murid (Rian):</span> "Mampir heula ka bumina Tante, margi kamus abdi kantun di ditu. Ibu uninga teu, kamari abdi milari heula sajam?"</p>
-        <p><span class="tokoh">Ibu Guru:</span> "Oh, kitu. Muhun ayeuna mah mangga énggal calik, urang ngawitan diajarna."</p>
+    <div class="card-body">
+      <div class="info-strip">💡 Serat patarosan anu mucunghul dina émutan salira sabada maos matéri!</div>
+
+      <div class="soal-block">
+        <div class="soal-num">Pertarosan 1: Perhartoskeun Materi Paguneman anu di kagiatan 1</div>
+        <p>Naon bédana <strong>basa loma</strong> jeung <strong>basa lemes</strong> dina paguneman?</p>
+        <textarea id="menanya1" placeholder="Mangga seratkeun waleran hidep di dieu.i..."></textarea>
+      </div>
+
+      <div class="soal-block">
+        <div class="soal-num">Pertarosan 2 : Perhartoskeun bagian tabel Kosakata Undak-Usuk Basa Sunda </div>
+        <p>Upami urang nuju nyarita ngeunaan diri sorangan di payuneun Ibu Guru, kecap mana anu bener dipaké pikeun ngagentos kecap indit? Antara kecap Mios atanapi Angkat??</p>
+        <textarea id="menanya2" placeholder="Mangga seratkeun waleran hidep di dieu.i..."></textarea>
+      </div>
+
+      <div class="soal-block">
+        <div class="soal-num">Pertarosan 3 : Perhartoskeun bagian Conto Paguneman (Percakapan) & Kaayaan Kajadianna </div>
+        <p>Simkuring ngetok panto kelas sabab rada kasiangan lebet sakola. Ibu Guru nuju ngadeg di payun kelas badé ngawitan pelajaran. Simkuring nyuhunkeun hapunten sareng ngajelaskeun alesan kasiangan kusabab wengi tadi kasorangan teuing mondokna.  
+          Pék jieun 4 jajar (baris) percakapan anu sopan antara hidep (anak) jeung Ibu Guru!</p>
+        <textarea id="menanya3" placeholder="Mangga seratkeun waleran hidep di dieu.i..."></textarea>
+      </div>
     </div>
-</div>
+  </div>
+
+  <!-- KEGIATAN 3: MENCOBA / MENGUMPULKAN INFORMASI -->
+  <div class="card theme-orange">
+    <div class="card-header">
+      <div class="card-icon">🔍</div>
+      <div>
+        <div class="card-title">Kegiatan 3 – Mencoba</div>
+        <div class="card-step">Langkah 3 dari 5 (Pendekatan Saintifik)</div>
+      </div>
+    </div>
+    <div class="card-body">
+
+      <div class="step-label">A Pilihan Ganda Interaktif</div>
 
       <!-- Soal 1 PG -->
       <div class="soal-block">
@@ -1183,52 +1005,6 @@
 
     </div>
   </div>
-
-    </div>
-  </div>
-
-  </body>
-</html>  <!-- KAGIATAN 2: PERTAROSAN -->
-  <div class="card theme-yellow">
-    <div class="card-header">
-      <div class="card-icon">❓</div>
-      <div>
-        <div class="card-title">Kagiatan 2 – Pertarosan</div>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="info-strip">💡 Serat patarosan anu mucunghul dina émutan salira sabada maos matéri!</div>
-
-      <div class="soal-block">
-        <div class="soal-num">Pertarosan 1: Perhartoskeun Materi Paguneman anu di kagiatan 1</div>
-        <p>Naon bédana <strong>basa loma</strong> jeung <strong>basa lemes</strong> dina paguneman?</p>
-        <textarea id="menanya1" placeholder="Mangga seratkeun waleran hidep di dieu.i..."></textarea>
-      </div>
-
-      <div class="soal-block">
-        <div class="soal-num">Pertarosan 2 : Perhartoskeun bagian tabel Kosakata Undak-Usuk Basa Sunda </div>
-        <p>Upami urang nuju nyarita ngeunaan diri sorangan di payuneun Ibu Guru, kecap mana anu bener dipaké pikeun ngagentos kecap indit? Antara kecap Mios atanapi Angkat??</p>
-        <textarea id="menanya2" placeholder="Mangga seratkeun waleran hidep di dieu.i..."></textarea>
-      </div>
-
-       <div class="soal-block">
-      <div class="soal-num">Pertarosan 3 : Perhartoskeun bagian Conto Paguneman (Percakapan) & Kaayaan Kajadianna </div>
-        <p>Simkuring ngetok panto kelas sabab rada kasiangan lebet sakola. Ibu Guru nuju ngadeg di payun kelas badé ngawitan pelajaran. Simkuring nyuhunkeun hapunten sareng ngajelaskeun alesan kasiangan kusabab wengi tadi kasorangan teuing mondokna.  
-          Pék jieun 4 jajar (baris) percakapan anu sopan antara hidep (anak) jeung Ibu Guru!</p>
-        <textarea id="menanya2" placeholder="Mangga seratkeun waleran hidep di dieu.i..."></textarea>
-      </div>
-        <!-- KEGIATAN 3: MENCOBA / MENGUMPULKAN INFORMASI -->
-  <div class="card theme-orange">
-    <div class="card-header">
-      <div class="card-icon">🔍</div>
-      <div>
-        <div class="card-title">Kegiatan 3 – Mencoba</div>
-        <div class="card-step">Langkah 3 dari 5 (Pendekatan Saintifik)</div>
-      </div>
-    </div>
-    <div class="card-body">
-
-      <div class="step-label">A Pilihan Ganda Interaktif</div>
 
   <!-- REFLEKSI AKHIR -->
   <div class="card theme-green">
@@ -1377,20 +1153,6 @@ function resetDragDrop() {
   document.querySelectorAll('.drag-chip').forEach(c => c.style.display = 'inline-block');
   document.getElementById('fb_drag').className = 'feedback';
   document.getElementById('fb_drag').textContent = '';
-}
-
-// ====================== PASANGKAN ======================
-function cekPasangkan() {
-  const jawaban = document.getElementById('pasangkan').value.toUpperCase().replace(/\s/g,'');
-  const fb = document.getElementById('fb_pasang');
-  const kunci = '1-C,2-E,3-B,4-D,5-A'.replace(/\s/g,'');
-  if (jawaban === kunci) {
-    fb.className = 'feedback benar';
-    fb.innerHTML = '✅ <strong>Leres pisan!</strong> Semua pasangan kamu tepat! 🏆';
-  } else {
-    fb.className = 'feedback salah';
-    fb.innerHTML = `❌ Masih ada yang belum tepat. Kunci: <strong>1-C, 2-E, 3-B, 4-D, 5-A</strong>. Coba lagi, ya!`;
-  }
 }
 
 // ====================== EMOJI RATING ======================
